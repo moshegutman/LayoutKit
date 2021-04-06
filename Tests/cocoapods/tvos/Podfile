@@ -1,8 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :tvos, '10.2'
-
-use_frameworks!
-
-target 'LayoutKit-tvOS' do
-  pod 'LayoutKit'
-end
