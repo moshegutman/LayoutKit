@@ -8,31 +8,31 @@
 
 import CoreGraphics
 
-@objc open class LOKLayoutMeasurement: NSObject {
+  open class LOKLayoutMeasurement: NSObject {
     let measurement: LayoutMeasurement
     private let wrappedLayout: LOKLayout
 
     /// The layout that was measured.
-    @objc public var layout: LOKLayout {
+      public var layout: LOKLayout {
         return wrappedLayout
     }
 
     /// The minimum size of the layout given the maximum size constraint.
-    @objc public var size: CGSize {
+      public var size: CGSize {
         return measurement.size
     }
 
     /// The maximum size constraint used during measurement.
-    @objc public var maxSize: CGSize {
+      public var maxSize: CGSize {
         return measurement.maxSize
     }
 
     /// The measurements of the layout's sublayouts.
-    @objc public var sublayouts: [LOKLayoutMeasurement] {
+      public var sublayouts: [LOKLayoutMeasurement] {
         return measurement.sublayouts.map { LOKLayoutMeasurement(layoutMeasurement: $0) }
     }
 
-    @objc public init(layout: LOKLayout, size: CGSize, maxSize: CGSize, sublayouts: [LOKLayoutMeasurement]) {
+      public init(layout: LOKLayout, size: CGSize, maxSize: CGSize, sublayouts: [LOKLayoutMeasurement]) {
         wrappedLayout = layout
         measurement = LayoutMeasurement(layout: layout.unwrapped, size: size, maxSize: maxSize, sublayouts: sublayouts.map { $0.measurement })
     }
@@ -48,7 +48,7 @@ import CoreGraphics
     }
 
     /// Convenience method to position this measured layout.
-    @objc public func arrangement(within rect: CGRect) -> LOKLayoutArrangement {
+      public func arrangement(within rect: CGRect) -> LOKLayoutArrangement {
         return LOKLayoutArrangement(layoutArrangement: measurement.arrangement(within: rect))
     }
 

@@ -11,53 +11,53 @@ import UIKit
 /**
  Layout for a `UITextView`.
  */
-@objc open class LOKTextViewLayout: LOKBaseLayout {
+  open class LOKTextViewLayout: LOKBaseLayout {
 
     /**
      `NSAttributedString` for textView's text.
      */
-    @objc public let attributedText: NSAttributedString?
+      public let attributedText: NSAttributedString?
 
     /**
      `NSString` for textView's text.
      */
-    @objc public let text: String?
+      public let text: String?
 
     /**
      Font for text layout.
      */
-    @objc public let font: UIFont?
+      public let font: UIFont?
 
     /**
      Line padding between text container and actual text in text layout.
      */
-    @objc public let lineFragmentPadding: CGFloat
+      public let lineFragmentPadding: CGFloat
 
     /**
      EdgeInsets for text layout.
      */
-    @objc public let textContainerInset: UIEdgeInsets
+      public let textContainerInset: UIEdgeInsets
 
     /**
      Specifies how this layout is positioned inside its parent layout.
      */
-    @objc public let layoutAlignment: LOKAlignment
+      public let layoutAlignment: LOKAlignment
 
     /**
      Class object for the created view. Should be a subclass of `UITextView`.
      */
-    @objc public let viewClass: UITextView.Type
+      public let viewClass: UITextView.Type
 
     /**
      LayoutKit configuration block called with created `UITextView`.
      */
-    @objc public let configure: ((UITextView) -> Void)?
+      public let configure: ((UITextView) -> Void)?
 
     /**
      Don't change `textContainerInset`, `lineFragmentPadding` in `configure` closure that's passed to init.
      By changing those, it will cause the Layout's size calculation to be incorrect. So they will be reset by using parameters from initializer.
      */
-    @objc public init(text: String? = nil,
+      public init(text: String? = nil,
                       font: UIFont? = nil,
                       lineFragmentPadding: CGFloat = 0,
                       textContainerInset: UIEdgeInsets = .zero,
@@ -86,7 +86,7 @@ import UIKit
             config: self.configure))
     }
 
-    @objc public init(attributedText: NSAttributedString? = nil,
+      public init(attributedText: NSAttributedString? = nil,
                       font: UIFont? = nil,
                       lineFragmentPadding: CGFloat = 0,
                       textContainerInset: UIEdgeInsets = .zero,

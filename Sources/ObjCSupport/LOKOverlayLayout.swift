@@ -13,42 +13,42 @@ import Foundation
  The size of the primary, background, and overlay layouts will be determined based on the size
  computed from the primary layout.
  */
-@objc open class LOKOverlayLayout: LOKBaseLayout {
+  open class LOKOverlayLayout: LOKBaseLayout {
 
     /**
      The primary layouts that the `LOKOverlayLayout` will use for sizing and flexibility.
      */
-    @objc public let primaryLayouts: [LOKLayout]
+      public let primaryLayouts: [LOKLayout]
 
     /**
      The layouts to put behind the primary layouts. They will be at most as large as the primary
      layouts.
      */
-    @objc public let backgroundLayouts: [LOKLayout]
+      public let backgroundLayouts: [LOKLayout]
 
     /**
      The layouts to put in front of the primary layout. They will be at most as large as the primary
      layouts.
      */
-    @objc public let overlayLayouts: [LOKLayout]
+      public let overlayLayouts: [LOKLayout]
 
     /**
      Specifies how this layout is positioned inside its parent layout.
      */
-    @objc public let alignment: LOKAlignment
+      public let alignment: LOKAlignment
 
 
     /**
      Class object for the view class to be created.
      */
-    @objc public let viewClass: View.Type
+      public let viewClass: View.Type
 
     /**
      LayoutKit configuration block called with created View.
      */
-    @objc public let configure: ((View) -> Void)?
+      public let configure: ((View) -> Void)?
 
-    @objc public init(primaryLayouts: [LOKLayout],
+      public init(primaryLayouts: [LOKLayout],
                       backgroundLayouts: [LOKLayout]? = nil,
                       overlayLayouts: [LOKLayout]? = nil,
                       alignment: LOKAlignment? = nil,

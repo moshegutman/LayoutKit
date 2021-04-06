@@ -20,54 +20,54 @@ import UIKit
 
  Similary, if you have your own custom button view, you will need to create your own custom layout for it.
  */
-@objc open class LOKButtonLayout: LOKBaseLayout {
+  open class LOKButtonLayout: LOKBaseLayout {
 
     /**
      Button type for button layout.
      */
-    @objc public let type: LOKButtonLayoutType
+      public let type: LOKButtonLayoutType
 
     /**
      Title for button layout.
      */
-    @objc public let title: String
+      public let title: String
 
     /**
      Button image for button layout.
      */
-    @objc public let image: UIImage?
+      public let image: UIImage?
 
     /**
      Size for button image.
      */
-    @objc public let imageSize: CGSize
+      public let imageSize: CGSize
 
     /**
      Font for button layout.
      */
-    @objc public let font: UIFont?
+      public let font: UIFont?
 
     /**
      Edge inset for button layout.
      */
-    @objc public let contentEdgeInsets: NSValue?
+      public let contentEdgeInsets: NSValue?
 
     /**
      Specifies how this layout is positioned inside its parent layout.
      */
-    @objc public let alignment: LOKAlignment
+      public let alignment: LOKAlignment
 
     /**
      Class object for the created view. Should be a subclass of `UIButton`.
      */
-    @objc public let viewClass: UIButton.Type
+      public let viewClass: UIButton.Type
 
     /**
      Layoutkit configuration block called with created `UIButton`
      */
-    @objc public let config: ((UIButton) -> Void)?
+      public let config: ((UIButton) -> Void)?
 
-    @objc public init(type: LOKButtonLayoutType,
+      public init(type: LOKButtonLayoutType,
                       title: String?,
                       image: UIImage?,
                       imageSize: CGSize,

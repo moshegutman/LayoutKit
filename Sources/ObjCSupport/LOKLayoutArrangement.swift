@@ -11,10 +11,10 @@ import CoreGraphics
 /**
  The frame of a layout and the frames of its sublayouts.
  */
-@objc open class LOKLayoutArrangement: NSObject {
+  open class LOKLayoutArrangement: NSObject {
     let layoutArrangement: LayoutArrangement
-    @objc public let layout: LOKLayout
-    @objc public let sublayouts: [LOKLayoutArrangement]
+      public let layout: LOKLayout
+      public let sublayouts: [LOKLayoutArrangement]
 
     init(layoutArrangement: LayoutArrangement) {
         self.layoutArrangement = layoutArrangement
@@ -22,19 +22,19 @@ import CoreGraphics
         self.sublayouts = layoutArrangement.sublayouts.map { LOKLayoutArrangement(layoutArrangement: $0) }
     }
 
-    @objc public init(layout: LOKLayout, frame: CGRect, sublayouts: [LOKLayoutArrangement]) {
+      public init(layout: LOKLayout, frame: CGRect, sublayouts: [LOKLayoutArrangement]) {
         self.layoutArrangement = LayoutArrangement(layout: layout.unwrapped, frame: frame, sublayouts: sublayouts.map { $0.layoutArrangement })
         self.layout = layout
         self.sublayouts = sublayouts
     }
 
-    @objc public class func arrangeLayout(_ layout: LOKLayout, width: CGFloat, height: CGFloat) -> LOKLayoutArrangement {
+      public class func arrangeLayout(_ layout: LOKLayout, width: CGFloat, height: CGFloat) -> LOKLayoutArrangement {
         return LOKLayoutArrangement(layoutArrangement: layout.unwrapped.arrangement(
             width: width.isFinite ? width : nil,
             height: height.isFinite ? height : nil))
     }
 
-    @objc public class func arrangeLayout(_ layout: LOKLayout, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) -> LOKLayoutArrangement {
+      public class func arrangeLayout(_ layout: LOKLayout, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) -> LOKLayoutArrangement {
         return LOKLayoutArrangement(layoutArrangement: layout.unwrapped.arrangement(
             origin: CGPoint(x: x, y: y),
             width: width.isFinite ? width : nil,
@@ -53,7 +53,7 @@ import CoreGraphics
      - returns: The root view. If a view was provided, then the same view will be returned, otherwise, a new one will be created.
      */
     @discardableResult
-    @objc public func makeViews(in view: View?) -> View {
+      public func makeViews(in view: View?) -> View {
         return layoutArrangement.makeViews(in: view)
     }
 
@@ -73,7 +73,7 @@ import CoreGraphics
      - returns: The root view. If a view was provided, then the same view will be returned, otherwise, a new one will be created.
      */
     @discardableResult
-    @objc public func makeViews(in view: View?, direction: UserInterfaceLayoutDirection) -> View {
+      public func makeViews(in view: View?, direction: UserInterfaceLayoutDirection) -> View {
         return layoutArrangement.makeViews(in: view, direction: direction)
     }
 
@@ -81,7 +81,7 @@ import CoreGraphics
      Helper function for `makeViews(in:direction:)` and `prepareAnimation(for:direction:)`.
      See the documentation for those two functions.
      */
-    @objc public func makeViews() -> View {
+      public func makeViews() -> View {
         return layoutArrangement.makeViews()
     }
 
@@ -103,7 +103,7 @@ import CoreGraphics
 
      MUST be run on the main thread.
      */
-    @objc(prepareAnimationForView:direction:)
+     (prepareAnimationForView:direction:)
     public func prepareAnimation(for view: View, direction: UserInterfaceLayoutDirection) -> LOKAnimation {
         return LOKAnimation(animation: layoutArrangement.prepareAnimation(for: view, direction: direction))
     }
@@ -126,12 +126,12 @@ import CoreGraphics
 
      MUST be run on the main thread.
      */
-    @objc(prepareAnimationForView:)
+     (prepareAnimationForView:)
     public func prepareAnimation(for view: View) -> LOKAnimation {
         return prepareAnimation(for: view, direction: .leftToRight)
     }
 
-    @objc public var frame: CGRect {
+      public var frame: CGRect {
         return layoutArrangement.frame
     }
 }

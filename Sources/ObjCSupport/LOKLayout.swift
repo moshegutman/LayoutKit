@@ -34,7 +34,7 @@ import CoreGraphics
 
  Layouts MUST be thread-safe.
  */
-@objc public protocol LOKLayout {
+  public protocol LOKLayout {
 
     /**
      Measures the minimum size of the layout and its sublayouts.
@@ -45,7 +45,7 @@ import CoreGraphics
      - returns: The minimum size required by the layout and its sublayouts given a maximum size.
      The size of the layout MUST NOT exceed `maxSize`.
      */
-    @objc func measurement(within maxSize: CGSize) -> LOKLayoutMeasurement
+      func measurement(within maxSize: CGSize) -> LOKLayoutMeasurement
 
     /**
      Returns the arrangement of frames for the layout inside a given rect.
@@ -61,13 +61,13 @@ import CoreGraphics
      - parameter measurement: A measurement which has size less than or equal to `rect.size` and greater than or equal to `measurement.maxSize`.
      - returns: A complete set of frames for the layout.
      */
-    @objc func arrangement(within rect: CGRect, measurement: LOKLayoutMeasurement) -> LOKLayoutArrangement
+      func arrangement(within rect: CGRect, measurement: LOKLayoutMeasurement) -> LOKLayoutArrangement
 
     /**
      Indicates whether a View object needs to be created for this layout.
      Layouts that just position their sublayouts can return `false` here.
      */
-    @objc var needsView: Bool { get }
+      var needsView: Bool { get }
 
     /**
      Returns a new `UIView` for the layout.
@@ -75,14 +75,14 @@ import CoreGraphics
 
      MUST be run on the main thread.
      */
-    @objc func makeView() -> View
+      func makeView() -> View
 
     /**
      Configures the given view.
 
      MUST be run on the main thread.
      */
-    @objc func configureView(_ view: View)
+      func configureView(_ view: View)
 
     /**
      The flexibility of the layout.
@@ -93,7 +93,7 @@ import CoreGraphics
 
      TODO: figure out how to assert if inflexible layouts are compressed.
      */
-    @objc var flexibility: LOKFlexibility { get }
+      var flexibility: LOKFlexibility { get }
 
     /**
      An identifier for the view that is produced by this layout.
@@ -101,7 +101,7 @@ import CoreGraphics
      If this layout is applied to an existing view hierarchy, and if there is a view with an identical viewReuseId,
      then that view will be reused for the new layout. If there is more than one view with the same viewReuseId, then an arbitrary one will be reused.
      */
-    @objc var viewReuseId: String? { get }
+      var viewReuseId: String? { get }
 }
 
 extension LOKLayout {

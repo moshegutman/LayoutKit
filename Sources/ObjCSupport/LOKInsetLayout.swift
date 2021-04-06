@@ -11,34 +11,34 @@ import CoreGraphics
 /**
  A layout that insets another layout.
  */
-@objc open class LOKInsetLayout: LOKBaseLayout {
+  open class LOKInsetLayout: LOKBaseLayout {
 
     /**
      `EdgeInsets` for layout.
      */
-    @objc public let insets: EdgeInsets
+      public let insets: EdgeInsets
 
     /**
      Specifies how a layout positions itself inside of its parent view.
      */
-    @objc public let alignment: LOKAlignment
+      public let alignment: LOKAlignment
 
     /**
      Class object for the view class to be created.
      */
-    @objc public let viewClass: View.Type
+      public let viewClass: View.Type
 
     /**
      Sublayout for `LOKInsetLayout`.
      */
-    @objc public let sublayout: LOKLayout
+      public let sublayout: LOKLayout
 
     /**
      LayoutKit configuration block called with created View.
      */
-    @objc public let configure: ((View) -> Void)?
+      public let configure: ((View) -> Void)?
 
-    @objc public init(insets: EdgeInsets,
+      public init(insets: EdgeInsets,
                       alignment: LOKAlignment? = nil,
                       flexibility: LOKFlexibility? = nil,
                       viewReuseId: String? = nil,
@@ -61,7 +61,7 @@ import CoreGraphics
         super.init(layout: layout)
     }
 
-    @objc public class func inset(by insets: EdgeInsets, sublayout: LOKLayout) -> LOKInsetLayout {
+      public class func inset(by insets: EdgeInsets, sublayout: LOKLayout) -> LOKInsetLayout {
         return LOKInsetLayout(insets: insets, sublayout: sublayout)
     }
 }

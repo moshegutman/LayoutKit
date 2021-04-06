@@ -11,54 +11,54 @@ import UIKit
 /**
  Layout for a `UILabel`.
  */
-@objc open class LOKLabelLayout: LOKBaseLayout {
+  open class LOKLabelLayout: LOKBaseLayout {
 
     /**
      Attributed string to display as the label.
      */
-    @objc public let attributedString: NSAttributedString?
+      public let attributedString: NSAttributedString?
 
     /**
      String to display as the label.
      */
-    @objc public let string: String?
+      public let string: String?
 
     /**
      Line height for label.
      */
-    @objc public let lineHeight: CGFloat
+      public let lineHeight: CGFloat
 
     /**
      Font for label.
      */
-    @objc public let font: UIFont
+      public let font: UIFont
 
     /**
      Line break mode for label.
      */
-    @objc public let lineBreakMode: NSLineBreakMode
+      public let lineBreakMode: NSLineBreakMode
 
     /**
      Number of lines the label can have.
      */
-    @objc public let numberOfLines: Int
+      public let numberOfLines: Int
 
     /**
      Specifies how this layout is positioned inside its parent layout
      */
-    @objc public let alignment: LOKAlignment
+      public let alignment: LOKAlignment
 
     /**
      Class object for the created view. Should be a subclass of `UILabel`.
      */
-    @objc public let viewClass: UILabel.Type
+      public let viewClass: UILabel.Type
 
     /**
      Layoutkit configuration block called with created `UIButton`.
      */
-    @objc public let configure: ((UILabel) -> Void)?
+      public let configure: ((UILabel) -> Void)?
 
-    @objc public init(attributedString: NSAttributedString,
+      public init(attributedString: NSAttributedString,
                       font: UIFont?,
                       lineBreakMode: NSLineBreakMode,
                       lineHeight: CGFloat,
@@ -92,7 +92,7 @@ import UIKit
         super.init(layout: layout)
     }
 
-    @objc public init(string: String,
+      public init(string: String,
                       font: UIFont?,
                       lineBreakMode: NSLineBreakMode,
                       lineHeight: CGFloat,

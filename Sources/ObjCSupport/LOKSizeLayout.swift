@@ -37,49 +37,49 @@ import CoreGraphics
  LOKSizeLayout<UIView>(minWidth: 100, sublayout: LOKLabelLayout(text: "Hello", alignment: .fill))
  ```
  */
-@objc open class LOKSizeLayout: LOKBaseLayout {
+  open class LOKSizeLayout: LOKBaseLayout {
 
     /**
      Minimum width for size layout.
      */
-    @objc public let minWidth: CGFloat
+      public let minWidth: CGFloat
 
     /**
      Maximum width for size layout.
      */
-    @objc public let maxWidth: CGFloat
+      public let maxWidth: CGFloat
 
     /**
      Minimum height for size layout.
      */
-    @objc public let minHeight: CGFloat
+      public let minHeight: CGFloat
 
     /**
      Maximum height for size layout.
      */
-    @objc public let maxHeight: CGFloat
+      public let maxHeight: CGFloat
 
     /**
      Alignment height for size layout.
      */
-    @objc public let alignment: LOKAlignment
+      public let alignment: LOKAlignment
 
     /**
      Class object for the view class to be created.
      */
-    @objc public let viewClass: View.Type
+      public let viewClass: View.Type
 
     /**
      Sublayout for which size layout is being created.
      */
-    @objc public let sublayout: LOKLayout?
+      public let sublayout: LOKLayout?
 
     /**
      Layoutkit configuration block called with created `LOKView`.
      */
-    @objc public let configure: ((View) -> Void)?
+      public let configure: ((View) -> Void)?
 
-    @objc public init(minWidth: CGFloat,
+      public init(minWidth: CGFloat,
                       maxWidth: CGFloat,
                       minHeight: CGFloat,
                       maxHeight: CGFloat,

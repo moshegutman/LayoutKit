@@ -22,7 +22,7 @@ import Foundation
  A parent layout SHOULD favor expanding/compressing more flexible sublayouts over less flexible sublayouts.
  A parent layout SHOULD NOT expand inflexible sublayouts.
  */
-@objc open class LOKFlexibility: NSObject {
+  open class LOKFlexibility: NSObject {
     let flexibility: Flexibility
 
     init(flexibility: Flexibility) {
@@ -32,34 +32,34 @@ import Foundation
     /**
      The flexible flex value.
      */
-    @objc public static let flexible = LOKFlexibility(flexibility: .flexible)
+      public static let flexible = LOKFlexibility(flexibility: .flexible)
 
     /**
      The inflexible flex value.
      */
-    @objc public static let inflexible = LOKFlexibility(flexibility: .inflexible)
+      public static let inflexible = LOKFlexibility(flexibility: .inflexible)
 
     /**
      The minimum flex value that is still flexible.
      */
-    @objc public static let min = LOKFlexibility(flexibility: .min)
+      public static let min = LOKFlexibility(flexibility: .min)
 
     /**
      The maximum flex value.
      */
-    @objc public static let max = LOKFlexibility(flexibility: .max)
+      public static let max = LOKFlexibility(flexibility: .max)
 
     /**
      More flexible than the default flexibility.
      */
-    @objc public static let high = LOKFlexibility(flexibility: .high)
+      public static let high = LOKFlexibility(flexibility: .high)
 
     /**
      Less flexible than the default flexibility.
      */
-    @objc public static let low = LOKFlexibility(flexibility: .low)
+      public static let low = LOKFlexibility(flexibility: .low)
 
-    @objc public static let horizontallyHighlyFlexible = LOKFlexibility(flexibility: Flexibility(horizontal: Flexibility.highFlex, vertical: Flexibility.inflexibleFlex))
-    @objc public static let horizontallyFlexible = LOKFlexibility(flexibility: Flexibility(horizontal: Flexibility.defaultFlex, vertical: Flexibility.inflexibleFlex))
-    @objc public static let verticallyFlexible = LOKFlexibility(flexibility: Flexibility(horizontal: Flexibility.inflexibleFlex, vertical: Flexibility.defaultFlex))
+      public static let horizontallyHighlyFlexible = LOKFlexibility(flexibility: Flexibility(horizontal: Flexibility.highFlex, vertical: Flexibility.inflexibleFlex))
+      public static let horizontallyFlexible = LOKFlexibility(flexibility: Flexibility(horizontal: Flexibility.defaultFlex, vertical: Flexibility.inflexibleFlex))
+      public static let verticallyFlexible = LOKFlexibility(flexibility: Flexibility(horizontal: Flexibility.inflexibleFlex, vertical: Flexibility.defaultFlex))
 }

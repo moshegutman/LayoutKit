@@ -9,7 +9,7 @@
 /**
  An animation for a layout.
  */
-@objc open class LOKAnimation: NSObject {
+  open class LOKAnimation: NSObject {
     private let animation: Animation
 
     init(animation: Animation) {
@@ -20,7 +20,7 @@
      Apply the final state of the animation.
      Call this inside a UIKit animation block.
      */
-    @objc public func apply() {
+      public func apply() {
         animation.apply()
     }
 }

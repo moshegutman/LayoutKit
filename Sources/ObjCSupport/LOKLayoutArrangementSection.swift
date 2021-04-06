@@ -8,12 +8,12 @@
 
 import Foundation
 
-@objc open class LOKLayoutArrangementSection: NSObject {
+  open class LOKLayoutArrangementSection: NSObject {
     let unwrapped: Section<[LayoutArrangement]>
-    @objc public let header: LOKLayoutArrangement?
-    @objc public let items: [LOKLayoutArrangement]
-    @objc public let footer: LOKLayoutArrangement?
-    @objc public init(header: LOKLayoutArrangement?, items: [LOKLayoutArrangement], footer: LOKLayoutArrangement?) {
+      public let header: LOKLayoutArrangement?
+      public let items: [LOKLayoutArrangement]
+      public let footer: LOKLayoutArrangement?
+      public init(header: LOKLayoutArrangement?, items: [LOKLayoutArrangement], footer: LOKLayoutArrangement?) {
         self.header = header
         self.items = items
         self.footer = footer

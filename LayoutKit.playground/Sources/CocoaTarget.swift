@@ -8,8 +8,8 @@ internal final class CocoaTarget<Value>: NSObject {
         self.action = action
     }
 
-    @objc
-    internal func sendNext(_ receiver: Any?) {
+     
+    @objc internal func sendNext(_ receiver: Any?) {
         action(receiver as! Value)
     }
 }
