@@ -103,7 +103,7 @@ import CoreGraphics
 
      MUST be run on the main thread.
      */
-     (prepareAnimationForView:direction:)
+    
     public func prepareAnimation(for view: View, direction: UserInterfaceLayoutDirection) -> LOKAnimation {
         return LOKAnimation(animation: layoutArrangement.prepareAnimation(for: view, direction: direction))
     }
@@ -126,7 +126,7 @@ import CoreGraphics
 
      MUST be run on the main thread.
      */
-     (prepareAnimationForView:)
+    
     public func prepareAnimation(for view: View) -> LOKAnimation {
         return prepareAnimation(for: view, direction: .leftToRight)
     }
